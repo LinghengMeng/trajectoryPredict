@@ -1,0 +1,15 @@
+creatTrainingData
+
+num = size(training_input_Data,2);
+P = randperm(num);
+train_num = round(num * 0.6);
+test_num = round(num - train_num);
+
+train_input = training_input_Data(:,P(1:train_num));
+train_target = training_output_Data(P(1:train_num),:);
+
+test_input = training_input_Data(P(train_num+1:num),:);
+test_target = training_output_Data(P(train_num+1:num),:);
+
+[training_input_Data mu sigma] = featureNormalize(train_input');
+[training_output_Data mu2 sigma2] = featureNormalize(train_input');
