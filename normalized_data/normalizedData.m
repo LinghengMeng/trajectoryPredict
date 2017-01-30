@@ -43,6 +43,7 @@ train_target = target_Data(:, P(1:train_num));
 
 test_input = input_Data(:, P(train_num+1:num));
 test_target = target_Data(:, P(train_num+1:num));
+test_trajectories = Data(:, P(train_num+1:num));
 
 % % [train_input_norm mu_train_input_norm sigma_train_input_norm] = featureNormalize(train_input);
 % % [train_target_norm mu_train_target_norm sigma_train_target_norm] = featureNormalize(train_target);
